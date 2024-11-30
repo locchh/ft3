@@ -12,6 +12,10 @@
 
 [FreedomIntelligence/evol-instruct-japanese](https://huggingface.co/datasets/FreedomIntelligence/evol-instruct-japanese)
 
+# longquan
+
+[longquan/llm-japanese-dataset-split_10](https://huggingface.co/datasets/longquan/llm-japanese-dataset-split_10)
+
 # Others
 
 https://huggingface.co/datasets/izumi-lab/llm-japanese-dataset

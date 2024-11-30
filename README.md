@@ -1,33 +1,51 @@
-# ft3
+# **FT3**
 
-fine tune multilingual LLM
+Fine-tuning Multilingual Large Language Models (LLMs)
 
-# features
+---
 
-- datasets, benchmark
-- inference
-- train
-- evaluate
-- gradio
+## **Features**
 
-# tips
+- **Datasets & Benchmarking**  
+  Tools and utilities for managing datasets and evaluating model performance.
+- **Inference**  
+  Generate predictions using fine-tuned multilingual LLMs.
+- **Training**  
+  Fine-tune multilingual LLMs on custom datasets.
+- **Evaluation**  
+  Assess model performance with robust metrics.
+- **Gradio Integration**  
+  Interactive demos for showcasing model capabilities.
 
-- Training on datasets with longer tokens can influence an LLM (large language model) to generate more tokens under certain conditions
+---
 
-- If the LLM's generated answer is shorter than the reference, the following happens to the metrics:
+## **Benchmark Categories**
 
-    BLEU-2/4: Scores decrease because fewer n-grams match between the shorter candidate and the reference.
+- **Code Switching**  
+  Handle multilingual scenarios with seamless transitions between languages.
+- **Long Conversations**  
+  Evaluate the ability to manage extended interactions.
+- **Multilingual Support**  
+  Test proficiency across multiple languages.
 
-    ROUGE-2/L: Scores decrease as fewer overlapping bigrams (ROUGE-2) or longest common subsequences (ROUGE-L) exist between the candidate and reference.
+---
 
-    BERTScore: Scores might still remain reasonable because BERTScore considers semantic similarity, but shorter outputs may still lead to slight reductions due to incomplete alignment with the reference.
+## **Tips for Fine-Tuning and Metrics**
 
-# references
+- **Token Length in Training**  
+  Training on datasets with longer tokens can encourage the LLM to generate longer responses under certain conditions.
+  
+- **Impact of Shorter Generated Answers on Metrics**  
+  When an LLM's output is shorter than the reference, the following metric behaviors are observed:
+  - **BLEU-2/4**: Lower scores due to fewer matching n-grams between the shorter output and the reference.
+  - **ROUGE-2/L**: Reduced scores as fewer overlapping bigrams (ROUGE-2) or longest common subsequences (ROUGE-L) exist.
+  - **BERTScore**: May still show reasonable results as it emphasizes semantic similarity, but shorter outputs can lead to slight reductions in alignment.
 
-[ft2](https://github.com/locchh/ft2)
+---
 
-[shidowake](https://huggingface.co/shidowake)
+## **References**
 
-[FreedomIntelligence](https://huggingface.co/FreedomIntelligence)
-
-[longquan](https://huggingface.co/longquan)
+- [FT2 Repository](https://github.com/locchh/ft2)  
+- [Shidowake on Hugging Face](https://huggingface.co/shidowake)  
+- [Freedom Intelligence on Hugging Face](https://huggingface.co/FreedomIntelligence)  
+- [Longquan on Hugging Face](https://huggingface.co/longquan)

@@ -4,6 +4,33 @@ from collections import Counter
 from transformers import AutoTokenizer
 from bert_score import score
 
+def convert_to_llama_format(input_list):
+    conversion_map = {
+        'from': 'role',
+        'value': 'content',
+        'gpt': 'assistant',
+        'human': 'user'
+    }
+    
+    output_list = []
+    for entry in input_list:
+        converted_entry = {
+            conversion_map['from']: conversion_map.get(entry['from'], entry['from']),
+            conversion_map['value']: entry['value']
+        }
+        output_list.append(converted_entry)
+    
+    return output_list
+
+
+def calculate_metrics(reference:str, candidate:str):
+    bert_score = calcuate_bert(reference, candidate)
+    bleu_2_score = calculate_bleu_score(reference, candidate,2)
+    bleu_4_score = calculate_bleu_score(reference, candidate,4)
+    rouge_2_score = calculate_rouge(reference, candidate, n=2)
+    calculate_rouge_l(reference, candidate)
+    return bert_score["f1_score"], bleu_2_score, bleu_4_score, rouge_2_score["f1_score"], rouge_l["f1_score"]
+
 # Calculate BERT
 def calcuate_bert(reference:str, candidate:str):
     P, R, F1 = score([candidate], [reference], lang="ja")  # Set language to Japanese

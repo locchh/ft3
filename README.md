@@ -6,3 +6,7 @@ fine tune multilingual llm
 - inference
 - benchmark
 - gradio
+
+# references
+
+[ft2](https://github.com/locchh/ft2)

@@ -32,6 +32,9 @@ Fine-tuning Multilingual Large Language Models (LLMs)
 
 ## **Tips for Fine-Tuning and Metrics**
 
+- **Check your input dataset**
+  Remember check your dataset quality before using.
+
 - **Token Length in Training**  
   Training on datasets with longer tokens can encourage the LLM to generate longer responses under certain conditions.
   

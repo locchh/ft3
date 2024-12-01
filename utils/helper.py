@@ -28,8 +28,8 @@ def calculate_metrics(reference:str, candidate:str):
     bleu_2_score = calculate_bleu_score(reference, candidate,2)
     bleu_4_score = calculate_bleu_score(reference, candidate,4)
     rouge_2_score = calculate_rouge(reference, candidate, n=2)
-    calculate_rouge_l(reference, candidate)
-    return bert_score["f1_score"], bleu_2_score, bleu_4_score, rouge_2_score["f1_score"], rouge_l["f1_score"]
+    rouge_l_score = calculate_rouge_l(reference, candidate)
+    return bert_score["f1_score"], bleu_2_score, bleu_4_score, rouge_2_score["f1_score"], rouge_l_score["f1_score"]
 
 # Calculate BERT
 def calcuate_bert(reference:str, candidate:str):
@@ -43,7 +43,7 @@ def calcuate_bert(reference:str, candidate:str):
     
 
 # Calculate ROUGE, ROUGE-L
-def calculate_rouge(reference, generated, n=1, model_id = "CohereForAI/aya-23-8B"):
+def calculate_rouge(reference, generated, n=1, model_id = "meta-llama/Llama-3.2-1B-Instruct"):
 
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     
@@ -96,7 +96,7 @@ def lcs_length(x, y):
 
     return lcs_table[m][n]
 
-def calculate_rouge_l(reference, generated, model_id = "CohereForAI/aya-23-8B"):
+def calculate_rouge_l(reference, generated, model_id = "meta-llama/Llama-3.2-1B-Instruct"):
 
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     

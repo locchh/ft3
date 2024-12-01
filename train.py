@@ -88,11 +88,11 @@ training_args = TrainingArguments(
     per_device_eval_batch_size=1,
     num_train_epochs=10,
     fp16=True,
-    report_to="none",
     log_level="info",
     learning_rate=0.000005,
     max_grad_norm=1,
-    logging_dir=output_dir
+    logging_dir=output_dir,
+    report_to=["tensorboard"],
 )
 
 
@@ -103,9 +103,8 @@ trainer = Trainer(
     train_dataset=tokenized_dataset["train"],
     eval_dataset=tokenized_dataset["test"],
     tokenizer=tokenizer,
-    callbacks=[LogEvalLossCallback()]  # Register the callback
+    callbacks=[LogEvalLossCallback()],  # Register the callback
 )
-
 
 # Train the model
 logger.info("Starting training...")

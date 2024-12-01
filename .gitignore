@@ -3,4 +3,5 @@ __pycache__
 fine-tuned-model
 results
 output
+flagged
 tmp*

@@ -1,4 +1,5 @@
 import os
+import sys
 import torch
 from tqdm import tqdm
 from transformers import pipeline
@@ -81,6 +82,10 @@ def export_metrics_to_file(metrics, file_path="metrics.txt"):
     print(f"Metrics saved to {file_path}")
 
 def main():
+
+    # Get model_id
+    model_id = sys.argv[1]
+
     # Check GPU availability
     check_gpu()
 
@@ -89,7 +94,7 @@ def main():
     train_data = load_and_prepare_dataset(dataset_name)
 
     # Create text generation pipeline
-    pipe = create_generation_pipeline()
+    pipe = create_generation_pipeline(model_id=model_id)
 
     # Initialize accumulators for metrics
     bert_total, bleu_2_total, bleu_4_total, rouge_2_total, rouge_l_total = accumulate_metrics(train_data, pipe)

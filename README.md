@@ -1,10 +1,10 @@
-# **FT3**
+# FT3
 
 Fine-tuning Multilingual Large Language Models (LLMs)
 
 ---
 
-## **Features**
+## Features
 
 - **Datasets & Benchmarking**  
   Tools and utilities for managing datasets and evaluating model performance.
@@ -19,7 +19,14 @@ Fine-tuning Multilingual Large Language Models (LLMs)
 
 ---
 
-## **Benchmark Categories**
+## Guides
+- Train command: `nohup python train.py > output.log 2>&1 &`
+- Evaluate command: `python evaluate.py <model_id>`
+- Chat command:
+
+---
+
+## Benchmark Categories
 
 - **Code Switching**  
   Handle multilingual scenarios with seamless transitions between languages.
@@ -30,7 +37,7 @@ Fine-tuning Multilingual Large Language Models (LLMs)
 
 ---
 
-## **Tips for Fine-Tuning and Metrics**
+## Tips for Fine-Tuning and Metrics
 
 - **Check your input dataset**
   Remember check your dataset quality before using.
@@ -46,7 +53,7 @@ Fine-tuning Multilingual Large Language Models (LLMs)
 
 ---
 
-## **References**
+## References
 
 - [FT2 Repository](https://github.com/locchh/ft2)  
 - [Shidowake on Hugging Face](https://huggingface.co/shidowake)  
